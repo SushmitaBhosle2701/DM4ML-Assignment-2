@@ -1,0 +1,11 @@
+<!-- Roll Number: 2025AG05790 | DM4ML Assignment 2 -->
+# Model Evaluation Results
+
+*Roll Number: 2025AG05790* - time-based test split, K=10, relevant = rating >= 4
+
+| model | Precision@10 | Recall@10 | NDCG@10 | Coverage | Diversity | RMSE | MAE | users_evaluated |
+|---|---|---|---|---|---|---|---|---|
+| popularity_baseline | 0.1502 | 0.3895 | 0.272 | 0.0858 | 0.8144 | 1.2172 | 1.0186 | 806 |
+| biased_als | 0.1797 | 0.4743 | 0.3726 | 0.1381 | 0.8234 | 0.8534 | 0.6813 | 806 |
+
+_Roll Number: 2025AG05790_

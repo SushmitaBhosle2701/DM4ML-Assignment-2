@@ -1,0 +1,95 @@
+{
+  "roll_number": "2025AG05790",
+  "checks": [
+    {
+      "table": "users",
+      "check": "duplicate user_id",
+      "violations": 5
+    },
+    {
+      "table": "users",
+      "check": "missing user_id",
+      "violations": 0
+    },
+    {
+      "table": "users",
+      "check": "missing age (kept, imputed later)",
+      "violations": 10
+    },
+    {
+      "table": "users",
+      "check": "age outside 5..100",
+      "violations": 0
+    },
+    {
+      "table": "items",
+      "check": "duplicate item_id",
+      "violations": 0
+    },
+    {
+      "table": "items",
+      "check": "missing category",
+      "violations": 0
+    },
+    {
+      "table": "items",
+      "check": "negative/non-numeric price (kept, imputed later)",
+      "violations": 8
+    },
+    {
+      "table": "interactions",
+      "check": "missing user/item/rating",
+      "violations": 754
+    },
+    {
+      "table": "interactions",
+      "check": "rating outside range",
+      "violations": 757
+    },
+    {
+      "table": "interactions",
+      "check": "unparseable timestamp",
+      "violations": 495
+    },
+    {
+      "table": "interactions",
+      "check": "timestamp out of range",
+      "violations": 256
+    },
+    {
+      "table": "interactions",
+      "check": "exact duplicate rows",
+      "violations": 688
+    },
+    {
+      "table": "interactions",
+      "check": "user_id not in users (RI)",
+      "violations": 339
+    },
+    {
+      "table": "interactions",
+      "check": "item_id not in items (RI)",
+      "violations": 731
+    },
+    {
+      "table": "interactions",
+      "check": "user-item pair repeated (keep latest)",
+      "violations": 0
+    }
+  ],
+  "rows_in": {
+    "users": 1005,
+    "items": 600,
+    "interactions": 37664
+  },
+  "rows_clean": {
+    "users": 1000,
+    "items": 600,
+    "interactions": 33644
+  },
+  "rows_rejected": {
+    "users": 5,
+    "items": 0,
+    "interactions": 4020
+  }
+}

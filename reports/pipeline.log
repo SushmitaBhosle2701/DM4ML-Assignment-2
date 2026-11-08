@@ -1,0 +1,32 @@
+2026-11-06 15:05:33,220 [INFO] [2025AG05790] ingestion: Ingesting data (source=synthetic)
+2026-11-06 15:05:33,368 [INFO] [2025AG05790] ingestion: raw/users.csv written: 1005 rows x 5 cols
+2026-11-06 15:05:33,372 [INFO] [2025AG05790] ingestion: raw/items.csv written: 600 rows x 6 cols
+2026-11-06 15:05:33,475 [INFO] [2025AG05790] ingestion: raw/interactions.csv written: 37664 rows x 4 cols
+2026-11-06 15:05:33,565 [WARNING] [2025AG05790] validation: users | duplicate user_id                | violations=5
+2026-11-06 15:05:33,567 [INFO] [2025AG05790] validation: users | missing user_id                  | violations=0
+2026-11-06 15:05:33,571 [WARNING] [2025AG05790] validation: users | missing age (kept, imputed later) | violations=10
+2026-11-06 15:05:33,572 [INFO] [2025AG05790] validation: users | age outside 5..100               | violations=0
+2026-11-06 15:05:33,574 [INFO] [2025AG05790] validation: items | duplicate item_id                | violations=0
+2026-11-06 15:05:33,576 [INFO] [2025AG05790] validation: items | missing category                 | violations=0
+2026-11-06 15:05:33,578 [WARNING] [2025AG05790] validation: items | negative/non-numeric price (kept, imputed later) | violations=8
+2026-11-06 15:05:33,604 [WARNING] [2025AG05790] validation: interactions | missing user/item/rating         | violations=754
+2026-11-06 15:05:33,608 [WARNING] [2025AG05790] validation: interactions | rating outside range             | violations=757
+2026-11-06 15:05:33,612 [WARNING] [2025AG05790] validation: interactions | unparseable timestamp            | violations=495
+2026-11-06 15:05:33,617 [WARNING] [2025AG05790] validation: interactions | timestamp out of range           | violations=256
+2026-11-06 15:05:33,639 [WARNING] [2025AG05790] validation: interactions | exact duplicate rows             | violations=688
+2026-11-06 15:05:33,643 [WARNING] [2025AG05790] validation: interactions | user_id not in users (RI)        | violations=339
+2026-11-06 15:05:33,648 [WARNING] [2025AG05790] validation: interactions | item_id not in items (RI)        | violations=731
+2026-11-06 15:05:33,678 [INFO] [2025AG05790] validation: interactions | user-item pair repeated (keep latest) | violations=0
+2026-11-06 15:05:33,691 [INFO] [2025AG05790] validation: users: clean=1000 rejected=5
+2026-11-06 15:05:33,702 [INFO] [2025AG05790] validation: items: clean=600 rejected=0
+2026-11-06 15:05:33,860 [INFO] [2025AG05790] validation: interactions: clean=33644 rejected=4020
+2026-11-06 15:05:34,008 [INFO] [2025AG05790] preparation: Dropped 0 repeated user-item pairs
+2026-11-06 15:05:34,035 [INFO] [2025AG05790] preparation: After k-core filter: 936 users, 536 items, 33305 interactions
+2026-11-06 15:05:34,050 [INFO] [2025AG05790] preparation: Split at 2022-12-25 09:06:56.800000 -> train=26644 test=6661
+2026-11-06 15:05:35,563 [INFO] [2025AG05790] transformation: Matrix (936, 536), density=0.0531
+2026-11-06 15:05:35,917 [INFO] [2025AG05790] features: Features: users=936 items=536 interaction rows=26644
+2026-11-06 15:05:44,937 [INFO] [2025AG05790] training: Validation NDCG@10 by pop_weight: {0.0: 0.198, 0.25: 0.2559, 0.5: 0.284, 1.0: 0.3067, 1.5: 0.3081, 2.0: 0.3078, 3.0: 0.3005} -> best=1.5
+2026-11-06 15:05:46,009 [INFO] [2025AG05790] training: Trained popularity_baseline (run f0f7ad5f)
+2026-11-06 15:05:46,847 [INFO] [2025AG05790] training: Trained biased_als (run c867e8e9)
+2026-11-06 15:05:47,275 [INFO] [2025AG05790] evaluation: popularity_baseline -> {'Precision@10': 0.1502, 'Recall@10': 0.3895, 'NDCG@10': 0.272, 'Coverage': 0.0858, 'Diversity': 0.8144, 'RMSE': 1.2172, 'MAE': 1.0186, 'users_evaluated': 806.0}
+2026-11-06 15:05:47,405 [INFO] [2025AG05790] evaluation: biased_als -> {'Precision@10': 0.1797, 'Recall@10': 0.4743, 'NDCG@10': 0.3726, 'Coverage': 0.1381, 'Diversity': 0.8234, 'RMSE': 0.8534, 'MAE': 0.6813, 'users_evaluated': 806.0}

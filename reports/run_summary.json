@@ -1,0 +1,41 @@
+{
+  "roll_number": "2025AG05790",
+  "flow": "recommendation_pipeline",
+  "tasks": [
+    {
+      "task": "ingest_data",
+      "status": "Completed",
+      "seconds": 0.26
+    },
+    {
+      "task": "validate_data",
+      "status": "Completed",
+      "seconds": 0.35
+    },
+    {
+      "task": "prepare_data",
+      "status": "Completed",
+      "seconds": 0.27
+    },
+    {
+      "task": "transform_data",
+      "status": "Completed",
+      "seconds": 0.27
+    },
+    {
+      "task": "build_features",
+      "status": "Completed",
+      "seconds": 0.31
+    },
+    {
+      "task": "train_models",
+      "status": "Completed",
+      "seconds": 8.15
+    },
+    {
+      "task": "evaluate_models",
+      "status": "Completed",
+      "seconds": 0.52
+    }
+  ]
+}

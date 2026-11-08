@@ -1,0 +1,7 @@
+# Roll Number: 2025AG05790  |  DM4ML Assignment 2
+__pycache__/
+*.pyc
+mlflow.db
+mlruns/
+.prefect/
+.venv/

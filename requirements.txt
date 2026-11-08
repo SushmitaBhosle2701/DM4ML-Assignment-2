@@ -1,0 +1,8 @@
+# Roll Number: 2025AG05790  |  DM4ML Assignment 2
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+PyYAML>=6.0
+mlflow>=2.10
+prefect>=3.0

@@ -1,0 +1,34 @@
+# Roll Number: 2025AG05790  |  DM4ML Assignment 2
+roll_number: "2025AG05790"
+seed: 42
+paths:
+  raw: data/raw
+  processed: data/processed
+  features: data/features
+  errors: data/errors
+  models: models
+  reports: reports
+  mlruns: mlruns
+data:
+  source: synthetic          # synthetic | movielens (needs data/raw/ml-100k/ extracted manually)
+  n_users: 1000
+  n_items: 600
+  n_interactions: 60000
+  dirty_fraction: 0.02       # share of injected bad records (synthetic only)
+validation:
+  rating_min: 1
+  rating_max: 5
+  min_timestamp: "2018-01-01"
+  max_timestamp: "2024-12-31"
+preparation:
+  min_user_interactions: 5
+  min_item_interactions: 5
+  test_fraction: 0.2         # most recent 20% of interactions (global time split)
+evaluation:
+  k: 10
+  relevance_threshold: 4     # rating >= 4 counts as relevant
+models:
+  als:
+    n_factors: 20
+    reg: 8.0
+    n_iters: 12

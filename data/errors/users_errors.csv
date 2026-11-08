@@ -1,0 +1,7 @@
+# Roll Number: 2025AG05790 | DM4ML Assignment 2
+user_id,age,gender,country,signup_date,reason
+643,61.0,F,UK,2021-05-16,duplicate_user_id
+763,67.0,M,US,2018-12-22,duplicate_user_id
+910,20.0,F,BR,2020-08-03,duplicate_user_id
+200,67.0,M,UK,2022-10-01,duplicate_user_id
+587,52.0,F,IN,2019-02-13,duplicate_user_id
